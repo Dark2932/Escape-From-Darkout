@@ -11,6 +11,6 @@ public class EFDBlocks {
 
     public static final BlockRegister BLOCK_REGISTER = BlockRegister.of(EFD.MODID);
 
-    public static final BlockEntry TEST_BLOCK = BLOCK_REGISTER.newBlock("test_item");
+    public static final BlockEntry TEST_BLOCK = BLOCK_REGISTER.newBlock("test_block");
 
 }
