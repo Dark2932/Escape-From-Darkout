@@ -8,7 +8,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.common.Mod;
-import com.dark2932.efd.datagen.efdBlockTablesProvider;
+import com.dark2932.efd.datagen.efdBlockModelProvider;
 
 import java.util.List;
 import java.util.Set;
@@ -23,7 +23,7 @@ public class efdDataGenerator {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(efdBlockTablesProvider::new, LootContextParamSets.BLOCK)
+
         )));
     }
 

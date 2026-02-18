@@ -20,7 +20,3 @@
 注册类型：item
 
 物品用处：制造爆炸投掷物
-
-### 高韧钢铁块 (high_toughness_steel_block)
-
-注册类型：block
