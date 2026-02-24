@@ -13,16 +13,10 @@ public class EFD {
     public static final String MODID = "efd";
 
     public EFD(FMLJavaModLoadingContext context) {
-//        IEventBus bus = context.getModEventBus();
-//
-//        bus.addListener(this::commonSetup);
-//
-//        EFDItems.ITEM_REGISTER.init(bus);
-//        EFDBlocks.BLOCK_REGISTER.init(bus);
-//        EFDTabs.TAB_REGISTER.init(bus);
 
-        EFDBlocks.init();
-
+        EFDBlocks.initBlocks();
+        EFDItems.initItems();
+        EFDTabs.initTabs();
     }
 
 //    private void commonSetup(FMLCommonSetupEvent event) {}
