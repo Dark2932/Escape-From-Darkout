@@ -114,6 +114,7 @@ gradle-app.setting
 # Common working directory
 run/*
 runs/
+run-data/
 !run/config/
 run/config/*
 !run/config/thirst
