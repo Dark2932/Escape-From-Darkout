@@ -1,7 +1,7 @@
 package com.dark2932.efd.mixin.thirstwastaken;
 
-import com.dark2932.efd.mixin.thirstwastaken.accessor.ItemThirstAccessor;
-import com.dark2932.efd.mixin.thirstwastaken.manager.ItemThirstManager;
+import com.dark2932.efd.util.accessor.ItemThirstAccessor;
+import com.dark2932.efd.util.manager.ItemThirstManager;
 import dev.ghen.thirst.content.purity.WaterPurity;
 import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
 import dev.ghen.thirst.foundation.common.item.DrinkableItem;

@@ -1,4 +1,4 @@
-package com.dark2932.efd.mixin.thirstwastaken.manager;
+package com.dark2932.efd.util.manager;
 
 /**
  * @author Dark2932
