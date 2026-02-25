@@ -16,6 +16,14 @@ public class EFDDataGenerator {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(event.includeClient(),new EFDItemModelProvider(packOutput,EFD.MODID, existingFileHelper));
+        //物品数据
+        generator.addProvider(event.includeClient(), new EFDItemModelProvider(packOutput, EFD.MODID, existingFileHelper));
+        //配方数据
+        generator.addProvider(event.includeClient(), new EFDRecipeProvider(packOutput));
+        //中文语言
+        generator.addProvider(event.includeClient(), new EFDZhLanguageProvider(packOutput, EFD.MODID));
+        //方块数据
+        generator.addProvider(event.includeClient(), new EFDBlockModelProvider(packOutput, EFD.MODID, existingFileHelper));
+
     }
 }
