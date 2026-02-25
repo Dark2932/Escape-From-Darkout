@@ -14,11 +14,18 @@ public class EFD {
 
     public EFD(FMLJavaModLoadingContext context) {
 
-        EFDBlocks.initBlocks();
-        EFDItems.initItems();
-        EFDTabs.initTabs();
+        IEventBus bus = context.getModEventBus();
+
+        bus.addListener(this::onFMLCommonSetup);
+
+        EFDItems.ITEM_REGISTER.init(bus);
+        EFDItems.FOOD_REGISTER.init(bus);
+        EFDTabs.TAB_REGISTER.init(bus);
+
     }
 
-//    private void commonSetup(FMLCommonSetupEvent event) {}
+    private void onFMLCommonSetup(FMLCommonSetupEvent event) {
+
+    }
 
 }

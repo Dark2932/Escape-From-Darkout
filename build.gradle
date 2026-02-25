@@ -133,6 +133,12 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
         name 'dark2932.github.io'
         url 'https://dark2932.github.io/'
     }
@@ -145,6 +151,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     implementation fg.deobf("com.dark2932:darklib:20260208")
+    implementation fg.deobf("curse.maven:thirst-was-taken-679270:6660408")
 
 }
 
