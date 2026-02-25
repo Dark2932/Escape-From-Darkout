@@ -17,7 +17,7 @@ public class EFDTabs {
     public static final RegistryObject<CreativeModeTab> TAB = TAB_REGISTER.newTab("efd_tab", () -> {
         return CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.efd.tab"))
-            //.icon()
+            .icon(EFDItems.TAURINE_DRINK::stack)
             .displayItems(TAB_REGISTER.getQuickGenerator())
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .build();
