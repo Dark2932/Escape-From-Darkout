@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 /**
  * @author Dark2932
  */
-@Mixin(DrinkableItem.class)
+@Mixin(value = DrinkableItem.class, remap = false)
 public abstract class MixinDrinkableItem implements ItemThirstAccessor {
 
     @Unique private final ItemThirstManager manager = new ItemThirstManager();

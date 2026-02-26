@@ -21,11 +21,12 @@ public class EFDMedical {
 
     public static final RegistryObject<Item> STANDARD_FIRST_AID_KIT =
             MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalManager(new Item.Properties()
-                    .stacksTo(1)
+                    .stacksTo(16)
                     .rarity(Rarity.UNCOMMON)
             )
-                    .setConsumption(1)
+                    .setConsumption(2)
                     .setHealthRestore(4)
                     .setUsingTime(20*3/2)//1.5秒打药
+                    .setThirstConsumption(2)
             );
 }

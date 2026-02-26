@@ -56,6 +56,14 @@ public class EFDMedicalManager extends Item{
         this.usingTime = tick;
         return this;
     }
+    /**
+     * 用于设置医疗物品每次使用消耗的水量
+     * @param thirstConsumption 消耗水量，填正整数（1-20）
+     */
+    public EFDMedicalManager setThirstConsumption(int thirstConsumption){
+        this.thirstComsumption = thirstConsumption;
+        return this;
+    }
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack){
@@ -83,8 +91,9 @@ public class EFDMedicalManager extends Item{
         if (pRemainingUseTicks <= 1 && entity instanceof Player player) {
 
             if (player.getHealth() < player.getMaxHealth() && !stack.isEmpty()) {
-                player.heal(healthValue);
-                stack.shrink(consumption);
+                //按剩下物品的数量恢复健康度
+                player.heal(healthValue*((float) stack.getCount() /consumption));
+                stack.shrink(Math.min(stack.getCount(), consumption));
                 player.playSound(usedSound, 1.0f, 1.0f);
                 player.stopUsingItem();
                 player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
