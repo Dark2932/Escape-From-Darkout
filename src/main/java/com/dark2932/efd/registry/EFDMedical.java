@@ -26,5 +26,6 @@ public class EFDMedical {
             )
                     .setConsumption(1)
                     .setHealthRestore(4)
+                    .setUsingTime(20*3/2)//1.5秒打药
             );
 }
