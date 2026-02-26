@@ -1,5 +1,6 @@
 package com.dark2932.efd.util.manager;
 
+import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -16,6 +17,7 @@ public class EFDMedicalManager extends Item{
     private int consumption = 1;
     private int usingTime = 32;
     private SoundEvent usedSound = SoundEvents.PLAYER_BREATH;
+    private int thirstComsumption = 1;
     /**
      * 用于设置医疗物品的属性
      **/
@@ -59,6 +61,7 @@ public class EFDMedicalManager extends Item{
     public UseAnim getUseAnimation(ItemStack stack){
         return UseAnim.BRUSH;
     }
+
     @Override
     public int getUseDuration(ItemStack stack) {
         return usingTime;
@@ -75,23 +78,20 @@ public class EFDMedicalManager extends Item{
     }
 
     @Override
-    public void onUseTick(Level pLevel, LivingEntity player, ItemStack stack, int pRemainingUseTicks) {
+    public void onUseTick(Level pLevel, LivingEntity entity, ItemStack stack, int pRemainingUseTicks) {
         // 剩余时间 <= 1 刻时执行效果（确保完整使用）
-        if (pRemainingUseTicks <= 1 && player instanceof Player) {
-            Player p = (Player) player;
+        if (pRemainingUseTicks <= 1 && entity instanceof Player player) {
 
-            if (p.getHealth() < p.getMaxHealth() && !stack.isEmpty()) {
-                p.heal(healthValue);
+            if (player.getHealth() < player.getMaxHealth() && !stack.isEmpty()) {
+                player.heal(healthValue);
                 stack.shrink(consumption);
-                p.playSound(usedSound, 1.0f, 1.0f);
-                p.stopUsingItem();
+                player.playSound(usedSound, 1.0f, 1.0f);
+                player.stopUsingItem();
+                player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
+                    cap.drink(player, -thirstComsumption, 0);
+                });
             }
         }
-    }
-    @Override
-    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-
-        return this.isEdible() ? pLivingEntity.eat(pLevel, pStack) : pStack;
     }
 
 }
