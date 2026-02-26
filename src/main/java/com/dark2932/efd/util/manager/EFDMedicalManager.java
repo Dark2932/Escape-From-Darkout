@@ -88,4 +88,10 @@ public class EFDMedicalManager extends Item{
             }
         }
     }
+    @Override
+    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
+
+        return this.isEdible() ? pLivingEntity.eat(pLevel, pStack) : pStack;
+    }
+
 }
