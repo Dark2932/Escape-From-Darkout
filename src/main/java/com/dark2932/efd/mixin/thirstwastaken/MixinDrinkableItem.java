@@ -23,21 +23,27 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = DrinkableItem.class, remap = false)
 public class MixinDrinkableItem implements DrinkableItemAccessor {
 
-    @Unique private DrinkableItemManager manager;
+    @Unique
+    private DrinkableItemManager manager;
 
-    @Redirect(method = "finishUsingItem", at = @At(value = "INVOKE", target = "Ldev/ghen/thirst/content/thirst/PlayerThirst;drink(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V"))
-    private void drinkMixin(ItemStack stack, Player player) {
-        WaterPurity.addPurity(stack, manager.getPurity());
-        player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
-            if (WaterPurity.givePurityEffects(player, stack)) {
-                cap.drink(player, manager.getThirst(), manager.getQuenched());
-            }
-        });
-    }
+    // 移除 @Redirect 方法，改用 @Inject 完全接管
 
-    @Inject(method = "finishUsingItem", at = @At(value = "RETURN"), cancellable = true)
-    private void eatMixin(ItemStack stack, Level level, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
-        cir.setReturnValue(stack.isEdible() ? entity.eat(level, stack) : stack);
+    @Inject(method = "finishUsingItem", at = @At(value = "HEAD"), cancellable = true)
+    private void finishUsingItemMixin(ItemStack stack, Level level, LivingEntity entity,
+                                      CallbackInfoReturnable<ItemStack> cir) {
+        if (entity instanceof Player player && manager != null) {
+            // 处理 thirst 水分恢复（只调用一次）
+            WaterPurity.addPurity(stack, manager.getPurity());
+            player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
+                if (WaterPurity.givePurityEffects(player, stack)) {
+                    cap.drink(player, manager.getThirst(), manager.getQuenched());
+                }
+            });
+
+            // 处理食物恢复
+            cir.setReturnValue(stack.isEdible() ? entity.eat(level, stack) : stack);
+            cir.cancel();  // 取消原始方法，防止重复执行
+        }
     }
 
     @Inject(method = "getUseAnimation", at = @At(value = "HEAD"), cancellable = true)
@@ -56,5 +62,4 @@ public class MixinDrinkableItem implements DrinkableItemAccessor {
     public DrinkableItemManager setManager(DrinkableItemManager manager) {
         return this.manager = manager;
     }
-
 }
