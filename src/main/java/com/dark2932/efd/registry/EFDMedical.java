@@ -80,4 +80,14 @@ public class EFDMedical {
                     .setUsingTime((int)(20*4.1))
                     .setThirstConsumption(0)
             );
+    /**
+     * 简易医疗盒 (basic_first_aid_kit)
+     */
+    public static final RegistryObject<Item> BASIC_FIRST_AID_KIT =
+            MedicalRegister.register("basic_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(1),8
+            )
+                    .setUsingTime(2*20)
+                    .setThirstConsumption(2)
+            );
 }

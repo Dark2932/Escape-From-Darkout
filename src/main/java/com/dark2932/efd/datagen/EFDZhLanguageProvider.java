@@ -20,5 +20,6 @@ public class EFDZhLanguageProvider extends LanguageProvider {
         add(EFDMedical.STO_FIRST_AID_KIT.get(),"STO急救套装");
         add(EFDMedical.TMK_FIELD_MEDICAL_KIT.get(),"TMK野战医疗包");
         add(EFDMedical.BATTLEFIELD_MEDICAL_KIT.get(),"战地医疗包");
+        add(EFDMedical.BASIC_FIRST_AID_KIT.get(),"简易医疗盒");
     }
 }
