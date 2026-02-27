@@ -12,9 +12,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * @author Dark2932
- */
 @Mixin(value = PlayerThirst.class, remap = false)
 public class MixinPlayerThirst {
 

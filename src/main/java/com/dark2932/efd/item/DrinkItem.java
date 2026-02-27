@@ -21,9 +21,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * @author Dark2932
- */
 public class DrinkItem extends Item {
 
     public final DrinkItemManager manager;

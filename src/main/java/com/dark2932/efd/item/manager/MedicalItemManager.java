@@ -3,7 +3,6 @@ package com.dark2932.efd.item.manager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
-
 public class MedicalItemManager {
 
     private int consumeThirst;

@@ -5,9 +5,6 @@ import com.dark2932.darklib.util.ItemEntry;
 import com.dark2932.efd.EFD;
 import net.minecraftforge.eventbus.api.IEventBus;
 
-/**
- * @author Dark2932
- */
 public class EFDCommonItems {
 
     public static final ItemRegister ITEM_REGISTER = ItemRegister.of(EFD.MODID);

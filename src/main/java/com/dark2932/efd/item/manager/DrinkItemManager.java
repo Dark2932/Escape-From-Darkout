@@ -7,9 +7,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Dark2932
- */
 public class DrinkItemManager {
 
     private int thirst; //可恢复的口渴值

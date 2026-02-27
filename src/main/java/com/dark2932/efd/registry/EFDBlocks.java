@@ -13,9 +13,6 @@
 //
 //import java.util.function.Supplier;
 //
-///**
-// * @author Dark2932
-// */
 //public class EFDBlocks {
 //    public static void initBlocks(){}
 //    public static final DeferredRegister<Block> BlockRegister =

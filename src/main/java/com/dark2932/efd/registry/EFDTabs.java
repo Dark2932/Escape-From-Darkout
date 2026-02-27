@@ -8,9 +8,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.registries.RegistryObject;
 
-/**
- * @author Dark2932
- */
 public class EFDTabs {
 
     public static final CreativeTabRegister TAB_REGISTER = CreativeTabRegister.of(EFD.MODID);
