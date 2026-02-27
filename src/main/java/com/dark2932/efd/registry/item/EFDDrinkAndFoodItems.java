@@ -1,4 +1,4 @@
-package com.dark2932.efd.registry;
+package com.dark2932.efd.registry.item;
 
 import com.dark2932.darklib.register.item.FoodRegister;
 import com.dark2932.darklib.register.item.ItemRegister;
@@ -11,22 +11,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
-/**
- * @author Dark2932
- */
-public class EFDItems {
+public class EFDDrinkAndFoodItems {
 
     public static final ItemRegister ITEM_REGISTER = ItemRegister.of(EFD.MODID);
     public static final FoodRegister FOOD_REGISTER = FoodRegister.of(EFD.MODID);
 
-    /** 普通物品 **/
-    public static final ItemEntry STEEL_INGOT = ITEM_REGISTER.newItem("steel_ingot");
-    public static final ItemEntry HIGH_TOUGHNESS_STEEL = ITEM_REGISTER.newItem("high_toughness_steel");
-    public static final ItemEntry TOOL_HAMMER = ITEM_REGISTER.newItem("tool_hammer");
-    public static final ItemEntry THIN_STEEL_SHEET = ITEM_REGISTER.newItem("thin_steel_sheet");
-    public static final ItemEntry STEEL_BOTTLE = ITEM_REGISTER.newItem("steel_bottle");
-
-    /** 食物与饮品 **/
     public static final ItemEntry TAURINE_CRYSTAL = newFood("taurine_crystal",
             new Item.Properties(),
             (new FoodProperties.Builder().nutrition(1).saturationMod(3.5f)
@@ -38,7 +27,7 @@ public class EFDItems {
 
     public static final ItemEntry TAURINE_DRINK = newDrinkableFood("taurine_drink",
             new Item.Properties().stacksTo(16),
-            new DrinkItemManager().thirst(4).quenched(4).container(STEEL_BOTTLE),
+            new DrinkItemManager().thirst(4).quenched(4).container(EFDCommonItems.STEEL_BOTTLE),
             (new FoodProperties.Builder().nutrition(3).saturationMod(5.5f)
                     .alwaysEat()
                     .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 150, 2, false, false, true), 1.0f)
@@ -53,7 +42,7 @@ public class EFDItems {
     }
 
     private static ItemEntry newDrink(String name, Item.Properties iProp, DrinkItemManager dProp) {
-        return ITEM_REGISTER.newItem(name, () -> new DrinkItem(iProp).setManager(dProp));
+        return ITEM_REGISTER.newItem(name, () -> new DrinkItem(iProp, dProp));
     }
 
     private static ItemEntry newFood(String name, Item.Properties properties, FoodProperties.Builder builder) {

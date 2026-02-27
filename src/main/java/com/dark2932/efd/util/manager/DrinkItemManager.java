@@ -53,8 +53,8 @@ public class DrinkItemManager {
         return this;
     }
 
-    public DrinkItemManager useDuration(int useDuration) {
-        this.useDuration = useDuration;
+    public DrinkItemManager useDuration(int tick) {
+        this.useDuration = tick;
         return this;
     }
 

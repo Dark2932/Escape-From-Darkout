@@ -21,7 +21,7 @@
 //    public static final DeferredRegister<Block> BlockRegister =
 //            DeferredRegister.create(ForgeRegistries.BLOCKS, EFD.MODID);
 //    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
-//        EFDItems.ItemRegister.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+//        EFDCommonItems.ItemRegister.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
 //    }
 //    private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block){
 //        RegistryObject<T> blocks = BlockRegister.register(name,block);

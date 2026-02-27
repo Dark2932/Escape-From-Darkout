@@ -1,7 +1,8 @@
 package com.dark2932.efd.datagen;
 
-import com.dark2932.efd.registry.EFDItems;
-import com.dark2932.efd.registry.EFDMedical;
+import com.dark2932.efd.registry.item.EFDCommonItems;
+import com.dark2932.efd.registry.item.EFDDrinkAndFoodItems;
+import com.dark2932.efd.registry.item.EFDMedicalItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -13,18 +14,18 @@ public class EFDZhLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(EFDItems.STEEL_INGOT.item(),"钢锭");
-        add(EFDItems.TAURINE_DRINK.item(),"牛磺酸饮料");
-        add(EFDItems.STEEL_BOTTLE.item(),"钢瓶");
-        add(EFDItems.TAURINE_CRYSTAL.item(),"牛磺酸结晶");
-        add(EFDItems.HIGH_TOUGHNESS_STEEL.item(),"高韧钢");
-        add(EFDItems.THIN_STEEL_SHEET.item(),"薄钢板");
-        add(EFDMedical.STANDARD_FIRST_AID_KIT.get(),"标准军用医疗包");
-        add(EFDMedical.RAPID_MEDICAL_KIT.get(),"926快速急救包");
-        add(EFDMedical.E3_MILITARY_MEDICAL_KIT.get(),"E3军用医疗包");
-        add(EFDMedical.STO_FIRST_AID_KIT.get(),"STO急救套装");
-        add(EFDMedical.TMK_FIELD_MEDICAL_KIT.get(),"TMK野战医疗包");
-        add(EFDMedical.BATTLEFIELD_MEDICAL_KIT.get(),"战地医疗包");
-        add(EFDMedical.BASIC_FIRST_AID_KIT.get(),"简易医疗盒");
+        add(EFDCommonItems.STEEL_INGOT.item(),"钢锭");
+        add(EFDDrinkAndFoodItems.TAURINE_DRINK.item(),"牛磺酸饮料");
+        add(EFDCommonItems.STEEL_BOTTLE.item(),"钢瓶");
+        add(EFDDrinkAndFoodItems.TAURINE_CRYSTAL.item(),"牛磺酸结晶");
+        add(EFDCommonItems.HIGH_TOUGHNESS_STEEL.item(),"高韧钢");
+        add(EFDCommonItems.THIN_STEEL_SHEET.item(),"薄钢板");
+        add(EFDMedicalItems.STANDARD_FIRST_AID_KIT.item(),"标准军用医疗包");
+        add(EFDMedicalItems.RAPID_MEDICAL_KIT.item(),"926快速急救包");
+        add(EFDMedicalItems.E3_MILITARY_MEDICAL_KIT.item(),"E3军用医疗包");
+        add(EFDMedicalItems.STO_FIRST_AID_KIT.item(),"STO急救套装");
+        add(EFDMedicalItems.TMK_FIELD_MEDICAL_KIT.item(),"TMK野战医疗包");
+        add(EFDMedicalItems.BATTLEFIELD_MEDICAL_KIT.item(),"战地医疗包");
+        add(EFDMedicalItems.BASIC_FIRST_AID_KIT.item(),"简易医疗盒");
     }
 }

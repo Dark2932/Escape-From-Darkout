@@ -13,7 +13,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 
-public class  EFDMedicalManager extends Item {
+public class EFDMedicalManager extends Item {
 
     private int usingTime = 32;
     private SoundEvent usedSound = SoundEvents.PLAYER_BREATH;

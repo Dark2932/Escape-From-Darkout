@@ -1,7 +1,7 @@
 package com.dark2932.efd.datagen;
 
 import com.dark2932.efd.EFD;
-import com.dark2932.efd.registry.EFDItems;
+import com.dark2932.efd.registry.item.EFDCommonItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -24,7 +24,7 @@ public class EFDRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.smelting(
                 Ingredient.of(Items.IRON_INGOT),//输入物品
                 RecipeCategory.BUILDING_BLOCKS,//配方类型
-                EFDItems.STEEL_INGOT.item(),//输出物品
+                EFDCommonItems.STEEL_INGOT.item(),//输出物品
                 0.7f,//获取经验值
                 20*7//熔炼时间
         )

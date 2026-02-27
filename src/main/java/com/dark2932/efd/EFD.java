@@ -1,8 +1,9 @@
 package com.dark2932.efd;
 
-import com.dark2932.efd.registry.EFDItems;
-import com.dark2932.efd.registry.EFDMedical;
 import com.dark2932.efd.registry.EFDTabs;
+import com.dark2932.efd.registry.item.EFDCommonItems;
+import com.dark2932.efd.registry.item.EFDDrinkAndFoodItems;
+import com.dark2932.efd.registry.item.EFDMedicalItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,10 +21,11 @@ public class EFD {
 
         bus.addListener(this::onFMLCommonSetup);
 
-        EFDItems.ITEM_REGISTER.init(bus);
-        EFDItems.FOOD_REGISTER.init(bus);
+        EFDCommonItems.ITEM_REGISTER.init(bus);
+        EFDDrinkAndFoodItems.ITEM_REGISTER.init(bus);
+        EFDDrinkAndFoodItems.FOOD_REGISTER.init(bus);
         EFDTabs.TAB_REGISTER.init(bus);
-        EFDMedical.init(bus);
+        EFDMedicalItems.ITEM_REGISTER.init(bus);
 
     }
 
