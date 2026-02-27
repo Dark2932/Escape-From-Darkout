@@ -28,7 +28,7 @@ public class EFDMedical {
                     .rarity(Rarity.UNCOMMON)
             )
                     .setConsumption(2)
-                    .setHealthRestore(4)
+                    .setHealthRestore(4f)
                     .setUsingTime(20*3)
                     .setThirstConsumption(2)
             );
@@ -42,7 +42,7 @@ public class EFDMedical {
                     .rarity(Rarity.UNCOMMON)
             )
                     .setConsumption(2)
-                    .setHealthRestore(4)
+                    .setHealthRestore(4f)
                     .setUsingTime(20)
                     .setThirstConsumption(4)
             );
@@ -56,7 +56,7 @@ public class EFDMedical {
                     .rarity(Rarity.UNCOMMON)
             )
                             .setConsumption(1)
-                            .setHealthRestore(4)
+                            .setHealthRestore(4f)
                             .setUsingTime(20*3/2)
                             .setThirstConsumption(3)
             );

@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
 
 public class EFDMedicalManager extends Item{
 
-    private int healthValue = 1;
+    private float healthValue = 1f;
     private int consumption = 1;
     private int usingTime = 32;
     private SoundEvent usedSound = SoundEvents.PLAYER_BREATH;
@@ -28,7 +28,7 @@ public class EFDMedicalManager extends Item{
      * 用于设置医疗物品的健康恢复值
      * @param healthValue 健康恢复值
      **/
-    public EFDMedicalManager setHealthRestore(int healthValue){
+    public EFDMedicalManager setHealthRestore(float healthValue){
         this.healthValue = healthValue;
         return this;
     }
@@ -91,8 +91,18 @@ public class EFDMedicalManager extends Item{
         if (pRemainingUseTicks <= 1 && entity instanceof Player player) {
 
             if (player.getHealth() < player.getMaxHealth() && !stack.isEmpty()) {
-                //按剩下物品的数量恢复健康度
-                player.heal(healthValue*((float) stack.getCount() /consumption));
+                /**
+                 * 健康值回复逻辑：
+                 * 如果当前剩余物品满足一次消耗（即，当前物品不为空），那么只进行一次消耗
+                 * 如果当前物品不满足一次消耗（当前数量 < 消耗数量），那么按比例进行消耗（本来回复血量*（持有物品数量/应消耗数量））
+                 * 如果当前需要恢复的血量不足一次消耗，那么按消耗一次计算
+                 */
+
+                if (stack.getCount() >= consumption){
+                    player.heal(healthValue);
+                }else{
+                    player.heal((float)(stack.getCount()/consumption)*healthValue);
+                }
                 stack.shrink(Math.min(stack.getCount(), consumption));
                 player.playSound(usedSound, 1.0f, 1.0f);
                 player.stopUsingItem();
