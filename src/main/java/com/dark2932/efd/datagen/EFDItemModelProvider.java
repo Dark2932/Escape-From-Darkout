@@ -15,12 +15,15 @@ public class EFDItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(EFDCommonItems.STEEL_INGOT.item());
-        basicItem(EFDDrinkAndFoodItems.TAURINE_DRINK.item());
         basicItem(EFDCommonItems.HIGH_TOUGHNESS_STEEL.item());
         basicItem(EFDCommonItems.STEEL_BOTTLE.item());
         basicItem(EFDCommonItems.THIN_STEEL_SHEET.item());
-        basicItem(EFDDrinkAndFoodItems.TAURINE_CRYSTAL.item());
         basicItem(EFDCommonItems.TOOL_HAMMER.item());
+
+        basicItem(EFDDrinkAndFoodItems.TAURINE_CRYSTAL.item());
+        basicItem(EFDDrinkAndFoodItems.TAURINE_DRINK.item());
+        basicItem(EFDDrinkAndFoodItems.COMPRESSED_BISCUITS.item());
+
         basicItem(EFDMedicalItems.STANDARD_FIRST_AID_KIT.item());
         basicItem(EFDMedicalItems.RAPID_MEDICAL_KIT.item());
         basicItem(EFDMedicalItems.E3_MILITARY_MEDICAL_KIT.item());

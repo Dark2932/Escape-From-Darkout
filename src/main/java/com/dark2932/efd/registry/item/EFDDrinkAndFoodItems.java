@@ -29,6 +29,12 @@ public class EFDDrinkAndFoodItems {
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 100, 0, false, false, true), 0.75f)
     );
 
+    public static final ItemEntry COMPRESSED_BISCUITS = newDrinkableFood("compressed_biscuits",
+            new Item.Properties().stacksTo(16),
+            new DrinkItemManager().thirst(-3).foodAnim(),
+            new FoodProperties.Builder().nutrition(10).saturationMod(2.5f)
+    );
+
     public static final ItemEntry TAURINE_DRINK = newDrinkableFood("taurine_drink",
             new Item.Properties().stacksTo(16),
             new DrinkItemManager().thirst(4).quenched(4)
