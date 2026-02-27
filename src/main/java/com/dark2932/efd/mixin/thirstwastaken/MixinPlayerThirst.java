@@ -1,7 +1,7 @@
 package com.dark2932.efd.mixin.thirstwastaken;
 
 import com.dark2932.efd.item.DrinkItem;
-import com.dark2932.efd.util.manager.DrinkItemManager;
+import com.dark2932.efd.item.manager.DrinkItemManager;
 import dev.ghen.thirst.api.ThirstHelper;
 import dev.ghen.thirst.content.purity.WaterPurity;
 import dev.ghen.thirst.content.thirst.PlayerThirst;

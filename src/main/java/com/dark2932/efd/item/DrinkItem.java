@@ -1,6 +1,6 @@
 package com.dark2932.efd.item;
 
-import com.dark2932.efd.util.manager.DrinkItemManager;
+import com.dark2932.efd.item.manager.DrinkItemManager;
 import com.mojang.datafixers.util.Pair;
 import dev.ghen.thirst.content.thirst.PlayerThirst;
 import net.minecraft.advancements.CriteriaTriggers;

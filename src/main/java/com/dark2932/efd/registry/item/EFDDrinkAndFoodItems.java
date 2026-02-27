@@ -5,7 +5,7 @@ import com.dark2932.darklib.register.item.ItemRegister;
 import com.dark2932.darklib.util.ItemEntry;
 import com.dark2932.efd.EFD;
 import com.dark2932.efd.item.DrinkItem;
-import com.dark2932.efd.util.manager.DrinkItemManager;
+import com.dark2932.efd.item.manager.DrinkItemManager;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;

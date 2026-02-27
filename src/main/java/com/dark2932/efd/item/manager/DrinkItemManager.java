@@ -1,4 +1,4 @@
-package com.dark2932.efd.util.manager;
+package com.dark2932.efd.item.manager;
 
 import com.dark2932.darklib.util.ItemEntry;
 

@@ -1,6 +1,6 @@
 package com.dark2932.efd.item;
 
-import com.dark2932.efd.util.manager.MedicalItemManager;
+import com.dark2932.efd.item.manager.MedicalItemManager;
 import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
