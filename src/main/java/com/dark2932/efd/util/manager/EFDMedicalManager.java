@@ -1,8 +1,11 @@
 package com.dark2932.efd.util.manager;
 
 import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
+import net.minecraft.client.resources.sounds.Sound;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -99,7 +102,14 @@ public class  EFDMedicalManager extends Item{
                     durabilityConsumption = healthDiff;
                     stack.setDamageValue(stack.getDamageValue() + (int) healthDiff);
                 }
-//                stack.shrink(Math.min(stack.getCount(), consumption));
+                ((ServerLevel) player.getCommandSenderWorld()).playSound(
+                        null,
+                        player.getX(), player.getY(), player.getZ(),
+                        usedSound,
+                        SoundSource.PLAYERS,
+                        1.0f,
+                        1.0f
+                );
                 player.playSound(usedSound, 1.0f, 1.0f);
                 player.stopUsingItem();
                 player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
