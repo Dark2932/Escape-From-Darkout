@@ -50,3 +50,45 @@
 使用时间：2
 
 消耗水量：2
+
+### AI-2急救组合 (ai2_first_aid_kit)
+耐久度：8
+
+使用时间：1.5
+
+消耗水量：4
+
+### AFAK急救包 (afak_first_aid_kit)
+耐久值：15
+
+使用时间：3
+
+消耗水量：2
+
+### 车载医疗包 (car_first_aid_kit)
+耐久值：20
+
+使用时间：3
+
+消耗水量：3
+
+### grizzly急救包 (grizzly_first_aid_kit)
+耐久值：16
+
+使用时间：3.5
+
+消耗水量：3
+
+### ifak急救包 (ifak_first_aid_kit)
+耐久值：14
+
+使用时间：3.3
+
+消耗水量：3
+
+### salewa急救包 (salewa_first_aid_kit)
+耐久值：20
+
+使用时间：3.1
+
+消耗水量：2
