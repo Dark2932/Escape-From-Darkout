@@ -15,5 +15,7 @@ public class EFDZhLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         add(EFDItems.STEEL_INGOT.item(),"钢锭");
         add(EFDMedical.STANDARD_FIRST_AID_KIT.get(),"标准军用医疗包");
+        add(EFDMedical.RAPID_MEDICAL_KIT.get(),"926快速急救包");
+        add(EFDMedical.E3_MILITARY_MEDICAL_KIT.get(),"E3军用医疗包");
     }
 }

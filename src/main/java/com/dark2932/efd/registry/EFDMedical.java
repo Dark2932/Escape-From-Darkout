@@ -19,6 +19,9 @@ public class EFDMedical {
     public static final DeferredRegister<Item> MedicalRegister =
             DeferredRegister.create(ForgeRegistries.ITEMS, EFD.MODID);
 
+    /**
+     * 标准军用医疗包 standard_first_aid_kit
+     */
     public static final RegistryObject<Item> STANDARD_FIRST_AID_KIT =
             MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalManager(new Item.Properties()
                     .stacksTo(16)
@@ -26,7 +29,35 @@ public class EFDMedical {
             )
                     .setConsumption(2)
                     .setHealthRestore(4)
-                    .setUsingTime(20*3/2)//1.5秒打药
+                    .setUsingTime(20*3)
                     .setThirstConsumption(2)
+            );
+
+    /**
+     * 926快速医疗包 Rapid Medical Kit
+     */
+    public static final RegistryObject<Item> RAPID_MEDICAL_KIT =
+            MedicalRegister.register("rapid_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(16)
+                    .rarity(Rarity.UNCOMMON)
+            )
+                    .setConsumption(2)
+                    .setHealthRestore(4)
+                    .setUsingTime(20)
+                    .setThirstConsumption(4)
+            );
+
+    /**
+     * E3军用医疗包Military medical kit
+     */
+    public static final RegistryObject<Item> E3_MILITARY_MEDICAL_KIT =
+            MedicalRegister.register("e3_military_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(16)
+                    .rarity(Rarity.UNCOMMON)
+            )
+                            .setConsumption(1)
+                            .setHealthRestore(4)
+                            .setUsingTime(20*3/2)
+                            .setThirstConsumption(3)
             );
 }
