@@ -11,5 +11,7 @@
   "item.efd.taurine_crystal": "牛磺酸结晶",
   "item.efd.taurine_drink": "牛磺酸饮料",
   "item.efd.thin_steel_sheet": "薄钢板",
-  "item.efd.tmk_field_medical_kit": "TMK野战医疗包"
+  "item.efd.tmk_field_medical_kit": "TMK野战医疗包",
+  "item.efd.tool_hammer": "锤子",
+  "itemGroup.efd.tab": "Escape From Darkout"
 }
