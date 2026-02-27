@@ -25,8 +25,8 @@ public class EFDMedical {
             MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalManager(new Item.Properties()
                     .stacksTo(1),10
             )
-                    .setUsingTime(20*3)
-                    .setThirstConsumption(1)
+                    .setUsingTime((int)(20*2.1))
+                    .setThirstConsumption(2)
             );
 
     /**
@@ -36,8 +36,8 @@ public class EFDMedical {
             MedicalRegister.register("rapid_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
                     .stacksTo(1),12
             )
-                    .setUsingTime(20)
-                    .setThirstConsumption(2)
+                    .setUsingTime((int)(20*3.2))
+                    .setThirstConsumption(3)
             );
 
     /**
@@ -47,7 +47,37 @@ public class EFDMedical {
             MedicalRegister.register("e3_military_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
                     .stacksTo(1),20
             )
-                            .setUsingTime(20*3/2)
-                            .setThirstConsumption(1)
+                            .setUsingTime((int)(20*4.1))
+                            .setThirstConsumption(3)
+            );
+    /**
+     * TMK野战医疗包tmk_field_medical_kit
+     */
+    public static final RegistryObject<Item> TMK_FIELD_MEDICAL_KIT =
+            MedicalRegister.register("tmk_field_medical_kit",() -> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(1),38
+            )
+                            .setUsingTime((int)(20*4.1))
+                            .setThirstConsumption(3)
+            );
+    /**
+     * STO急救套装sto_first_aid_kit
+     */
+    public static final RegistryObject<Item> STO_FIRST_AID_KIT =
+            MedicalRegister.register("sto_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(1),70
+            )
+                    .setThirstConsumption(2)
+                    .setUsingTime((int)(20*3.3))
+            );
+    /**
+     * 战地医疗包 (battlefield_medical_kit)
+     */
+    public static final RegistryObject<Item> BATTLEFIELD_MEDICAL_KIT =
+            MedicalRegister.register("battlefield_medical_kit",()-> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(1),30
+            )
+                    .setUsingTime((int)(20*4.1))
+                    .setThirstConsumption(0)
             );
 }

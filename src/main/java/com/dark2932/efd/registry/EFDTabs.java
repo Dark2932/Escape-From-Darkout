@@ -19,6 +19,11 @@ public class EFDTabs {
             .title(Component.translatable("itemGroup.efd.tab"))
             .icon(EFDItems.TAURINE_DRINK::stack)
             .displayItems(TAB_REGISTER.getQuickGenerator())
+            .displayItems((pParameters, pOutput) -> {
+                EFDMedical.MedicalRegister.getEntries().forEach(item ->{
+                    pOutput.accept(item.get());
+                });
+            })
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .build();
     });

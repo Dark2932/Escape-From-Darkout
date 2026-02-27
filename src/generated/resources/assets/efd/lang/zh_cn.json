@@ -1,6 +1,9 @@
 {
+  "item.efd.battlefield_medical_kit": "战地医疗包",
   "item.efd.e3_military_medical_kit": "E3军用医疗包",
   "item.efd.rapid_medical_kit": "926快速急救包",
   "item.efd.standard_first_aid_kit": "标准军用医疗包",
-  "item.efd.steel_ingot": "钢锭"
+  "item.efd.steel_ingot": "钢锭",
+  "item.efd.sto_first_aid_kit": "STO急救套装",
+  "item.efd.tmk_field_medical_kit": "TMK野战医疗包"
 }

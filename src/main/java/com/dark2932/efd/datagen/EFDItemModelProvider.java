@@ -18,5 +18,8 @@ public class EFDItemModelProvider extends ItemModelProvider {
         basicItem(EFDMedical.STANDARD_FIRST_AID_KIT.get());
         basicItem(EFDMedical.RAPID_MEDICAL_KIT.get());
         basicItem(EFDMedical.E3_MILITARY_MEDICAL_KIT.get());
+        basicItem(EFDMedical.TMK_FIELD_MEDICAL_KIT.get());
+        basicItem(EFDMedical.STO_FIRST_AID_KIT.get());
+        basicItem(EFDMedical.BATTLEFIELD_MEDICAL_KIT.get());
     }
 }
