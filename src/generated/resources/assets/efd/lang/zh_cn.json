@@ -2,9 +2,14 @@
   "item.efd.basic_first_aid_kit": "简易医疗盒",
   "item.efd.battlefield_medical_kit": "战地医疗包",
   "item.efd.e3_military_medical_kit": "E3军用医疗包",
+  "item.efd.high_toughness_steel": "高韧钢",
   "item.efd.rapid_medical_kit": "926快速急救包",
   "item.efd.standard_first_aid_kit": "标准军用医疗包",
+  "item.efd.steel_bottle": "钢瓶",
   "item.efd.steel_ingot": "钢锭",
   "item.efd.sto_first_aid_kit": "STO急救套装",
+  "item.efd.taurine_crystal": "牛磺酸结晶",
+  "item.efd.taurine_drink": "牛磺酸饮料",
+  "item.efd.thin_steel_sheet": "薄钢板",
   "item.efd.tmk_field_medical_kit": "TMK野战医疗包"
 }

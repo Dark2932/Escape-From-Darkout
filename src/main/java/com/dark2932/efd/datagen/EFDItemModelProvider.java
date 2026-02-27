@@ -15,6 +15,11 @@ public class EFDItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(EFDItems.STEEL_INGOT.item());
         basicItem(EFDItems.TAURINE_DRINK.item());
+        basicItem(EFDItems.HIGH_TOUGHNESS_STEEL.item());
+        basicItem(EFDItems.STEEL_BOTTLE.item());
+        basicItem(EFDItems.THIN_STEEL_SHEET.item());
+        basicItem(EFDItems.TAURINE_CRYSTAL.item());
+        basicItem(EFDItems.TAURINE_DRINK.item());
         basicItem(EFDMedical.STANDARD_FIRST_AID_KIT.get());
         basicItem(EFDMedical.RAPID_MEDICAL_KIT.get());
         basicItem(EFDMedical.E3_MILITARY_MEDICAL_KIT.get());
