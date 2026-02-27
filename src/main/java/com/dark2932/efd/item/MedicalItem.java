@@ -2,6 +2,7 @@ package com.dark2932.efd.item;
 
 import com.dark2932.efd.item.manager.MedicalItemManager;
 import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,9 +14,6 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * @author Dark2932
- */
 public class MedicalItem extends Item {
 
     public final MedicalItemManager manager;
@@ -66,7 +64,7 @@ public class MedicalItem extends Item {
                     durabilityConsumption = healthDiff;
                     stack.setDamageValue(stack.getDamageValue() + (int) healthDiff);
                 }
-                player.playSound(manager.getUseSound(), 1.0f, 1.0f);
+                level.playSound(player, player.getX(), player.getY(), player.getZ(), manager.getUseSound(), SoundSource.PLAYERS, 1.0f, 1.0f);
                 player.stopUsingItem();
                 player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
                     cap.drink(player, -(manager.getConsumeThirst() * (int) durabilityConsumption), 0);
