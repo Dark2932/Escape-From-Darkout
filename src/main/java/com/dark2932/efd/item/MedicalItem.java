@@ -6,6 +6,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
@@ -15,13 +16,13 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author Dark2932
  */
-public class MedicalItem extends ManageredItem<MedicalItemManager> {
+public class MedicalItem extends Item {
 
-    private final MedicalItemManager manager;
+    public final MedicalItemManager manager;
 
     public MedicalItem(Properties properties, MedicalItemManager manager) {
-        super(properties, manager);
-        this.manager = super.getManager();
+        super(properties);
+        this.manager = manager;
     }
 
     @Override

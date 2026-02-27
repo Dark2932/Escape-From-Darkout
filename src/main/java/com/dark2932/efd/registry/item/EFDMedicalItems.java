@@ -6,10 +6,15 @@ import com.dark2932.efd.EFD;
 import com.dark2932.efd.item.MedicalItem;
 import com.dark2932.efd.item.manager.MedicalItemManager;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 public class EFDMedicalItems {
 
     public static final ItemRegister ITEM_REGISTER = ItemRegister.of(EFD.MODID);
+
+    public static void init(IEventBus bus) {
+        ITEM_REGISTER.init(bus);
+    }
 
     /**
      * 标准军用医疗包 standard_first_aid_kit

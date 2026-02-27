@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
@@ -23,13 +24,13 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author Dark2932
  */
-public class DrinkItem extends ManageredItem<DrinkItemManager> {
+public class DrinkItem extends Item {
 
-    private final DrinkItemManager manager;
+    public final DrinkItemManager manager;
 
     public DrinkItem(Properties properties, DrinkItemManager manager) {
-        super(properties, manager);
-        this.manager = super.getManager();
+        super(properties);
+        this.manager = manager;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.dark2932.efd.registry.item;
 import com.dark2932.darklib.register.item.ItemRegister;
 import com.dark2932.darklib.util.ItemEntry;
 import com.dark2932.efd.EFD;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 /**
  * @author Dark2932
@@ -10,6 +11,10 @@ import com.dark2932.efd.EFD;
 public class EFDCommonItems {
 
     public static final ItemRegister ITEM_REGISTER = ItemRegister.of(EFD.MODID);
+
+    public static void init(IEventBus bus) {
+        ITEM_REGISTER.init(bus);
+    }
 
     public static final ItemEntry STEEL_INGOT = ITEM_REGISTER.newItem("steel_ingot");
     public static final ItemEntry HIGH_TOUGHNESS_STEEL = ITEM_REGISTER.newItem("high_toughness_steel");

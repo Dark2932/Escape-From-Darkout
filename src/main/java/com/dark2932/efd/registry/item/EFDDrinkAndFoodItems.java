@@ -10,11 +10,17 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 public class EFDDrinkAndFoodItems {
 
     public static final ItemRegister ITEM_REGISTER = ItemRegister.of(EFD.MODID);
     public static final FoodRegister FOOD_REGISTER = FoodRegister.of(EFD.MODID);
+
+    public static void init(IEventBus bus) {
+        ITEM_REGISTER.init(bus);
+        FOOD_REGISTER.init(bus);
+    }
 
     public static final ItemEntry TAURINE_CRYSTAL = newFood("taurine_crystal",
             new Item.Properties(),

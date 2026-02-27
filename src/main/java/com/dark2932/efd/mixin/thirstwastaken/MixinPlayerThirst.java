@@ -22,7 +22,7 @@ public class MixinPlayerThirst {
     @Inject(method = "drink(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V", at = @At(value = "TAIL"))
     private static void mixin$drink(ItemStack stack, Player player, CallbackInfo ci) {
         if (!ThirstHelper.itemRestoresThirst(stack) && stack.getItem() instanceof DrinkItem item) {
-            DrinkItemManager manager = item.getManager();
+            DrinkItemManager manager = item.manager;
             WaterPurity.addPurity(stack, manager.getPurity());
             player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
                 if (WaterPurity.givePurityEffects(player, stack)) {

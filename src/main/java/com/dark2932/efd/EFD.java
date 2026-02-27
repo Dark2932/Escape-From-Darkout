@@ -21,10 +21,9 @@ public class EFD {
 
         bus.addListener(this::onFMLCommonSetup);
 
-        EFDCommonItems.ITEM_REGISTER.init(bus);
-        EFDMedicalItems.ITEM_REGISTER.init(bus);
-        EFDDrinkAndFoodItems.ITEM_REGISTER.init(bus);
-        EFDDrinkAndFoodItems.FOOD_REGISTER.init(bus);
+        EFDCommonItems.init(bus);
+        EFDMedicalItems.init(bus);
+        EFDDrinkAndFoodItems.init(bus);
         EFDTabs.TAB_REGISTER.init(bus);
 
     }
