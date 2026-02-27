@@ -1,6 +1,11 @@
 package com.dark2932.efd.item.manager;
 
 import com.dark2932.darklib.util.ItemEntry;
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.world.effect.MobEffectInstance;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Dark2932
@@ -9,10 +14,10 @@ public class DrinkItemManager {
 
     private int thirst; //可恢复的口渴值
     private int quenched; //可恢复的水合度（饱水度）
-    private int purity = 3; //0-3，分别为[脏，有点脏的，能接受的，纯净]
     private int useDuration = 32; //使用时间，原版默认32tick
     private ItemEntry container; //喝完后返还的物品
     private boolean foodAnim; //true播放吃东西的动画，默认为false，即播放喝东西的动画
+    private List<Pair<MobEffectInstance, Float>> effects; //喝完后给予玩家的药水效果
 
     public int getThirst() {
         return thirst;
@@ -20,10 +25,6 @@ public class DrinkItemManager {
 
     public int getQuenched() {
         return quenched;
-    }
-
-    public int getPurity() {
-        return purity;
     }
 
     public int getUseDuration() {
@@ -38,6 +39,10 @@ public class DrinkItemManager {
         return foodAnim;
     }
 
+    public List<Pair<MobEffectInstance, Float>> getEffects() {
+        return effects;
+    }
+
     public DrinkItemManager thirst(int thirst) {
         this.thirst = thirst;
         return this;
@@ -45,11 +50,6 @@ public class DrinkItemManager {
 
     public DrinkItemManager quenched(int quenched) {
         this.quenched = quenched;
-        return this;
-    }
-
-    public DrinkItemManager purity(int purity) {
-        this.purity = purity;
         return this;
     }
 
@@ -63,8 +63,14 @@ public class DrinkItemManager {
         return this;
     }
 
-    public DrinkItemManager food() {
+    public DrinkItemManager foodAnim() {
         this.foodAnim = true;
+        return this;
+    }
+
+    public DrinkItemManager effect(MobEffectInstance effectIn, float probability) {
+        this.effects = new ArrayList<>();
+        this.effects.add(Pair.of(effectIn, probability));
         return this;
     }
 

@@ -24,21 +24,19 @@ public class EFDDrinkAndFoodItems {
 
     public static final ItemEntry TAURINE_CRYSTAL = newFood("taurine_crystal",
             new Item.Properties(),
-            (new FoodProperties.Builder().nutrition(1).saturationMod(3.5f)
-                    .alwaysEat()
+            new FoodProperties.Builder().nutrition(1).saturationMod(3.5f)
                     .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20*100, 0, false, false, true), 0.75f)
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20*100, 0, false, false, true), 0.75f)
-            )
     );
 
     public static final ItemEntry TAURINE_DRINK = newDrinkableFood("taurine_drink",
             new Item.Properties().stacksTo(16),
-            new DrinkItemManager().thirst(4).quenched(4).container(EFDCommonItems.STEEL_BOTTLE),
-            (new FoodProperties.Builder().nutrition(3).saturationMod(5.5f)
+            new DrinkItemManager().thirst(4).quenched(4)
+                    .container(EFDCommonItems.STEEL_BOTTLE)
+                    .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 150, 1, false, false, true), 1.0f)
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 150, 2, false, false, true), 1.0f),
+            new FoodProperties.Builder().nutrition(3).saturationMod(5.5f)
                     .alwaysEat()
-                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 150, 2, false, false, true), 1.0f)
-                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 150, 1, false, false, true), 1.0f)
-            )
     );
 
     /** 构建物品的私有方法 **/

@@ -3,7 +3,6 @@ package com.dark2932.efd.mixin.thirstwastaken;
 import com.dark2932.efd.item.DrinkItem;
 import com.dark2932.efd.item.manager.DrinkItemManager;
 import dev.ghen.thirst.api.ThirstHelper;
-import dev.ghen.thirst.content.purity.WaterPurity;
 import dev.ghen.thirst.content.thirst.PlayerThirst;
 import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
 import net.minecraft.world.entity.player.Player;
@@ -23,11 +22,8 @@ public class MixinPlayerThirst {
     private static void mixin$drink(ItemStack stack, Player player, CallbackInfo ci) {
         if (!ThirstHelper.itemRestoresThirst(stack) && stack.getItem() instanceof DrinkItem item) {
             DrinkItemManager manager = item.manager;
-            WaterPurity.addPurity(stack, manager.getPurity());
             player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
-                if (WaterPurity.givePurityEffects(player, stack)) {
-                    cap.drink(player, manager.getThirst(), manager.getQuenched());
-                }
+                cap.drink(player, manager.getThirst(), manager.getQuenched());
             });
         }
     }
