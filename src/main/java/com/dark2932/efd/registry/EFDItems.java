@@ -22,14 +22,14 @@ public class EFDItems {
     /** 普通物品 **/
     public static final ItemEntry STEEL_INGOT = ITEM_REGISTER.newItem("steel_ingot");
     public static final ItemEntry HIGH_TOUGHNESS_STEEL = ITEM_REGISTER.newItem("high_toughness_steel");
-    public static final ItemEntry HAMMER = ITEM_REGISTER.newItem("hammer");
+    public static final ItemEntry TOOL_HAMMER = ITEM_REGISTER.newItem("tool_hammer");
     public static final ItemEntry THIN_STEEL_SHEET = ITEM_REGISTER.newItem("thin_steel_sheet");
     public static final ItemEntry STEEL_BOTTLE = ITEM_REGISTER.newItem("steel_bottle");
 
     /** 食物与饮品 **/
     public static final ItemEntry TAURINE_CRYSTAL = newFood("taurine_crystal",
             new Item.Properties(),
-            (newFoodProps().nutrition(1).saturationMod(3.5f)
+            (new FoodProperties.Builder().nutrition(1).saturationMod(3.5f)
                     .alwaysEat()
                     .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20*100, 0, false, false, true), 0.75f)
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20*100, 0, false, false, true), 0.75f)
@@ -39,7 +39,7 @@ public class EFDItems {
     public static final ItemEntry TAURINE_DRINK = newDrinkableFood("taurine_drink",
             new Item.Properties().stacksTo(16),
             new DrinkItemManager().thirst(4).quenched(4).container(STEEL_BOTTLE),
-            (newFoodProps().nutrition(3).saturationMod(5.5f)
+            (new FoodProperties.Builder().nutrition(3).saturationMod(5.5f)
                     .alwaysEat()
                     .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 150, 2, false, false, true), 1.0f)
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 150, 1, false, false, true), 1.0f)
@@ -58,10 +58,6 @@ public class EFDItems {
 
     private static ItemEntry newFood(String name, Item.Properties properties, FoodProperties.Builder builder) {
         return FOOD_REGISTER.newFood(name, properties, builder.build());
-    }
-
-    private static FoodProperties.Builder newFoodProps() {
-        return new FoodProperties.Builder();
     }
 
 }

@@ -20,6 +20,7 @@ public class EFDItemModelProvider extends ItemModelProvider {
         basicItem(EFDItems.THIN_STEEL_SHEET.item());
         basicItem(EFDItems.TAURINE_CRYSTAL.item());
         basicItem(EFDItems.TAURINE_DRINK.item());
+        basicItem(EFDItems.TOOL_HAMMER.item());
         basicItem(EFDMedical.STANDARD_FIRST_AID_KIT.get());
         basicItem(EFDMedical.RAPID_MEDICAL_KIT.get());
         basicItem(EFDMedical.E3_MILITARY_MEDICAL_KIT.get());
