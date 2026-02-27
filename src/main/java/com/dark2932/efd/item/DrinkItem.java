@@ -66,7 +66,7 @@ public class DrinkItem extends Item {
         }
 
         //给予玩家饮品的药水效果
-        if (!level.isClientSide && manager != null && manager.getEffects() != null) {
+        if (!level.isClientSide && (manager != null && manager.getEffects() != null)) {
             for (Pair<MobEffectInstance, Float> pair : manager.getEffects()) {
                 if (pair.getFirst() != null && level.random.nextFloat() < pair.getSecond()) {
                     player.addEffect(pair.getFirst());
@@ -75,14 +75,19 @@ public class DrinkItem extends Item {
         }
 
         //如果是食物，执行以下逻辑
-        if (stack.isEdible()) {
-            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+        if (stack.isEdible() && manager != null) {
+            manager.burp();
             player.getFoodData().eat(stack.getItem(), stack, player);
             for (Pair<MobEffectInstance, Float> pair : stack.getFoodProperties(player).getEffects()) {
                 if (!level.isClientSide && pair.getFirst() != null && level.random.nextFloat() < pair.getSecond()) {
                     player.addEffect(pair.getFirst());
                 }
             }
+        }
+
+        //令玩家喝（吃）完后打嗝
+        if (manager != null && manager.ifBurp()) {
+            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
         }
 
         return stack;

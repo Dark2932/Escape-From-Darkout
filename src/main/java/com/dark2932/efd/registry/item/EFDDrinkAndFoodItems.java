@@ -25,8 +25,8 @@ public class EFDDrinkAndFoodItems {
     public static final ItemEntry TAURINE_CRYSTAL = newFood("taurine_crystal",
             new Item.Properties(),
             new FoodProperties.Builder().nutrition(1).saturationMod(3.5f)
-                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20*100, 0, false, false, true), 0.75f)
-                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20*100, 0, false, false, true), 0.75f)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 100, 0, false, false, true), 0.75f)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 100, 0, false, false, true), 0.75f)
     );
 
     public static final ItemEntry TAURINE_DRINK = newDrinkableFood("taurine_drink",

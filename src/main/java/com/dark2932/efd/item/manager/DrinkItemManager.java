@@ -17,6 +17,7 @@ public class DrinkItemManager {
     private int useDuration = 32; //使用时间，原版默认32tick
     private ItemEntry container; //喝完后返还的物品
     private boolean foodAnim; //true播放吃东西的动画，默认为false，即播放喝东西的动画
+    private boolean ifBurp; //true让玩家喝完后打嗝，默认false。但如果DrinkItem含有食物属性，则此项会被设置为true
     private List<Pair<MobEffectInstance, Float>> effects; //喝完后给予玩家的药水效果
 
     public int getThirst() {
@@ -37,6 +38,10 @@ public class DrinkItemManager {
 
     public boolean isFoodAnim() {
         return foodAnim;
+    }
+
+    public boolean ifBurp() {
+        return ifBurp;
     }
 
     public List<Pair<MobEffectInstance, Float>> getEffects() {
@@ -65,6 +70,11 @@ public class DrinkItemManager {
 
     public DrinkItemManager foodAnim() {
         this.foodAnim = true;
+        return this;
+    }
+
+    public DrinkItemManager burp() {
+        this.ifBurp = true;
         return this;
     }
 
