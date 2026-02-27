@@ -11,34 +11,17 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 
-public class EFDMedicalManager extends Item{
+public class  EFDMedicalManager extends Item{
 
-    private float healthValue = 1f;
-    private int consumption = 1;
     private int usingTime = 32;
     private SoundEvent usedSound = SoundEvents.PLAYER_BREATH;
     private int thirstComsumption = 1;
+
     /**
      * 用于设置医疗物品的属性
      **/
-    public EFDMedicalManager(Properties pProperties) {
-        super(pProperties);
-    }
-    /**
-     * 用于设置医疗物品的健康恢复值
-     * @param healthValue 健康恢复值
-     **/
-    public EFDMedicalManager setHealthRestore(float healthValue){
-        this.healthValue = healthValue;
-        return this;
-    }
-    /**
-     * 用于设置医疗物品的使用消耗值
-     * @param consumption 使用消耗数量
-     **/
-    public EFDMedicalManager setConsumption(int consumption){
-        this.consumption = consumption;
-        return this;
+    public EFDMedicalManager(Properties pProperties,int durability) {
+        super(pProperties.durability(durability));
     }
     /**
      * 用于设置医疗物品使用后的声音
@@ -57,7 +40,7 @@ public class EFDMedicalManager extends Item{
         return this;
     }
     /**
-     * 用于设置医疗物品每次使用消耗的水量
+     * 用于设置医疗物品每修补1血量消耗的水量
      * @param thirstConsumption 消耗水量，填正整数（1-20）
      */
     public EFDMedicalManager setThirstConsumption(int thirstConsumption){
@@ -90,24 +73,35 @@ public class EFDMedicalManager extends Item{
         // 剩余时间 <= 1 刻时执行效果（确保完整使用）
         if (pRemainingUseTicks <= 1 && entity instanceof Player player) {
 
-            if (player.getHealth() < player.getMaxHealth() && !stack.isEmpty()) {
+            if (player.getHealth() < player.getMaxHealth() && !stack.isEmpty() && stack.getDamageValue() < stack.getMaxDamage()) {
                 /**
                  * 健康值回复逻辑：
-                 * 如果当前剩余物品满足一次消耗（即，当前物品不为空），那么只进行一次消耗
-                 * 如果当前物品不满足一次消耗（当前数量 < 消耗数量），那么按比例进行消耗（本来回复血量*（持有物品数量/应消耗数量））
-                 * 如果当前需要恢复的血量不足一次消耗，那么按消耗一次计算
+                 * 修补多少血量，使用多少耐久
+                 *
+                 * 水分减少逻辑：
+                 * 每修补一血量，减少**水分
                  */
-
-                if (stack.getCount() >= consumption){
-                    player.heal(healthValue);
-                }else{
-                    player.heal((float)(stack.getCount()/consumption)*healthValue);
+                float healthDiff = player.getMaxHealth() - player.getHealth();
+                int remainingDurability = stack.getMaxDamage() - stack.getDamageValue();
+                float durabilityConsumption;
+                if (healthDiff >= remainingDurability) {
+                    //血量缺少部分>=物品耐久，物品全部使用
+                    player.heal(remainingDurability);
+                    durabilityConsumption = remainingDurability;
+                    stack.setDamageValue(stack.getMaxDamage());
+                    //物品销毁
+                    stack.shrink(1);
+                } else {
+                    //血量缺少部分<物品耐久，血量满，物品耐久降低
+                    player.setHealth(player.getMaxHealth());
+                    durabilityConsumption = healthDiff;
+                    stack.setDamageValue(stack.getDamageValue() + (int) healthDiff);
                 }
-                stack.shrink(Math.min(stack.getCount(), consumption));
+//                stack.shrink(Math.min(stack.getCount(), consumption));
                 player.playSound(usedSound, 1.0f, 1.0f);
                 player.stopUsingItem();
                 player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {
-                    cap.drink(player, -thirstComsumption, 0);
+                    cap.drink(player, -(thirstComsumption * (int) durabilityConsumption), 0);
                 });
             }
         }

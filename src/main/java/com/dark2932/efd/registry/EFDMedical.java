@@ -3,7 +3,6 @@ package com.dark2932.efd.registry;
 import com.dark2932.efd.EFD;
 import com.dark2932.efd.util.manager.EFDMedicalManager;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,13 +23,10 @@ public class EFDMedical {
      */
     public static final RegistryObject<Item> STANDARD_FIRST_AID_KIT =
             MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalManager(new Item.Properties()
-                    .stacksTo(16)
-                    .rarity(Rarity.UNCOMMON)
+                    .stacksTo(1),10
             )
-                    .setConsumption(2)
-                    .setHealthRestore(4f)
                     .setUsingTime(20*3)
-                    .setThirstConsumption(2)
+                    .setThirstConsumption(1)
             );
 
     /**
@@ -38,13 +34,10 @@ public class EFDMedical {
      */
     public static final RegistryObject<Item> RAPID_MEDICAL_KIT =
             MedicalRegister.register("rapid_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
-                    .stacksTo(16)
-                    .rarity(Rarity.UNCOMMON)
+                    .stacksTo(1),12
             )
-                    .setConsumption(2)
-                    .setHealthRestore(4f)
                     .setUsingTime(20)
-                    .setThirstConsumption(4)
+                    .setThirstConsumption(2)
             );
 
     /**
@@ -52,12 +45,9 @@ public class EFDMedical {
      */
     public static final RegistryObject<Item> E3_MILITARY_MEDICAL_KIT =
             MedicalRegister.register("e3_military_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
-                    .stacksTo(16)
-                    .rarity(Rarity.UNCOMMON)
+                    .stacksTo(1),20
             )
-                            .setConsumption(1)
-                            .setHealthRestore(4f)
                             .setUsingTime(20*3/2)
-                            .setThirstConsumption(3)
+                            .setThirstConsumption(1)
             );
 }
