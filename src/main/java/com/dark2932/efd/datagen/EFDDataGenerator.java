@@ -16,6 +16,7 @@ public class EFDDataGenerator {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+        
         //物品数据
         generator.addProvider(event.includeClient(), new EFDItemModelProvider(packOutput, EFD.MODID, existingFileHelper));
         //配方数据
