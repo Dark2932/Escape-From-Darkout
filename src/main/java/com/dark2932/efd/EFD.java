@@ -1,6 +1,8 @@
 package com.dark2932.efd;
 
-import com.dark2932.efd.registry.*;
+import com.dark2932.efd.registry.EFDItems;
+import com.dark2932.efd.registry.EFDMedical;
+import com.dark2932.efd.registry.EFDTabs;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

@@ -2,12 +2,8 @@ package com.dark2932.efd.item;
 
 import com.dark2932.efd.util.manager.DrinkItemManager;
 import com.mojang.datafixers.util.Pair;
-import dev.ghen.thirst.api.ThirstHelper;
-import dev.ghen.thirst.content.purity.WaterPurity;
 import dev.ghen.thirst.content.thirst.PlayerThirst;
-import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -102,13 +98,16 @@ public class DrinkItem extends Item {
 
     @Override
     public int getUseDuration(@NotNull ItemStack stack) {
-        return manager.getUseDuration();
+        return manager != null ? manager.getUseDuration() : 32;
     }
 
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
-        if (manager.isFoodAnim()) return UseAnim.EAT;
-        else return UseAnim.DRINK;
+        if (manager != null && manager.isFoodAnim()) {
+            return UseAnim.EAT;
+        } else {
+            return UseAnim.DRINK;
+        }
     }
 
 }
