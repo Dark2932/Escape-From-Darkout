@@ -4,14 +4,12 @@ import com.dark2932.darklib.register.item.FoodRegister;
 import com.dark2932.darklib.register.item.ItemRegister;
 import com.dark2932.darklib.util.ItemEntry;
 import com.dark2932.efd.EFD;
-import com.dark2932.efd.util.accessor.DrinkableItemAccessor;
-import com.dark2932.efd.util.manager.DrinkableItemManager;
-import dev.ghen.thirst.foundation.common.item.DrinkableItem;
+import com.dark2932.efd.item.DrinkItem;
+import com.dark2932.efd.util.manager.DrinkItemManager;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Dark2932
@@ -40,7 +38,7 @@ public class EFDItems {
 
     public static final ItemEntry TAURINE_DRINK = newDrinkableFood("taurine_drink",
             new Item.Properties().stacksTo(16),
-            new DrinkableItemManager().thirst(4).quenched(4).container(STEEL_BOTTLE),
+            new DrinkItemManager().thirst(4).quenched(4).container(STEEL_BOTTLE),
             (newFoodProps().nutrition(3).saturationMod(5.5f)
                     .alwaysEat()
                     .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 150, 2, false, false, true), 1.0f)
@@ -49,18 +47,13 @@ public class EFDItems {
     );
 
     /** 构建物品的私有方法 **/
-    private static ItemEntry newDrinkableFood(String name, Item.Properties iProp, DrinkableItemManager dProp, FoodProperties.Builder fBuilder) {
+    private static ItemEntry newDrinkableFood(String name, Item.Properties iProp, DrinkItemManager dProp, FoodProperties.Builder fBuilder) {
         FoodProperties fProp = fBuilder.build();
-        return newDrink(name, iProp.food(fProp), dProp.isFast(fProp.isFastFood()));
+        return newDrink(name, iProp.food(fProp), dProp);
     }
 
-    private static ItemEntry newDrink(String name, Item.Properties iProp, DrinkableItemManager dProp) {
-        return ITEM_REGISTER.newItem(name, () -> {
-            DrinkableItem item = new DrinkableItem(iProp).setDrinkDuration(dProp.isFastDrink() ? 16 : 32);
-            if (dProp.getContainer() != null) item.setContainer(dProp.getContainer().item());
-            ((DrinkableItemAccessor) item).setManager(dProp);
-            return item;
-        });
+    private static ItemEntry newDrink(String name, Item.Properties iProp, DrinkItemManager dProp) {
+        return ITEM_REGISTER.newItem(name, () -> new DrinkItem(iProp).setManager(dProp));
     }
 
     private static ItemEntry newFood(String name, Item.Properties properties, FoodProperties.Builder builder) {

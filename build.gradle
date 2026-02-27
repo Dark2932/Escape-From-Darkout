@@ -145,6 +145,10 @@ repositories {
         name 'dark2932.github.io'
         url 'https://dark2932.github.io/'
     }
+    maven {
+        name 'AppleSkin'
+        url "https://maven.ryanliptak.com/"
+    }
 }
 
 dependencies {
@@ -155,6 +159,8 @@ dependencies {
 
     implementation fg.deobf("com.dark2932:darklib:20260208")
     implementation fg.deobf("curse.maven:thirst-was-taken-679270:6660408")
+
+    compileOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-2.5.1:api")
 
 }
 
