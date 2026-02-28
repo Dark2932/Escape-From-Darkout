@@ -24,12 +24,12 @@ public class EFDItemModelProvider extends ItemModelProvider {
         basicItem(EFDDrinkAndFoodItems.TAURINE_DRINK.item());
         basicItem(EFDDrinkAndFoodItems.COMPRESSED_BISCUITS.item());
 
-        basicItem(EFDMedicalItems.STANDARD_FIRST_AID_KIT.item());
-        basicItem(EFDMedicalItems.RAPID_MEDICAL_KIT.item());
-        basicItem(EFDMedicalItems.E3_MILITARY_MEDICAL_KIT.item());
-        basicItem(EFDMedicalItems.TMK_FIELD_MEDICAL_KIT.item());
-        basicItem(EFDMedicalItems.STO_FIRST_AID_KIT.item());
-        basicItem(EFDMedicalItems.BATTLEFIELD_MEDICAL_KIT.item());
-        basicItem(EFDMedicalItems.BASIC_FIRST_AID_KIT.item());
+        basicItem(EFDMedicalItems.STANDARD_FIRST_AID_KIT.get());
+        basicItem(EFDMedicalItems.RAPID_MEDICAL_KIT.get());
+        basicItem(EFDMedicalItems.E3_MILITARY_MEDICAL_KIT.get());
+        basicItem(EFDMedicalItems.TMK_FIELD_MEDICAL_KIT.get());
+        basicItem(EFDMedicalItems.STO_FIRST_AID_KIT.get());
+        basicItem(EFDMedicalItems.BATTLEFIELD_MEDICAL_KIT.get());
+        basicItem(EFDMedicalItems.BASIC_FIRST_AID_KIT.get());
     }
 }

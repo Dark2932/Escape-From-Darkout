@@ -26,13 +26,13 @@ public class EFDZhLanguageProvider extends LanguageProvider {
         add(EFDDrinkAndFoodItems.TAURINE_DRINK.item(),"牛磺酸饮料");
         add(EFDDrinkAndFoodItems.COMPRESSED_BISCUITS.item(),"压缩饼干");
 
-        add(EFDMedicalItems.STANDARD_FIRST_AID_KIT.item(),"标准军用医疗包");
-        add(EFDMedicalItems.RAPID_MEDICAL_KIT.item(),"926快速急救包");
-        add(EFDMedicalItems.E3_MILITARY_MEDICAL_KIT.item(),"E3军用医疗包");
-        add(EFDMedicalItems.STO_FIRST_AID_KIT.item(),"STO急救套装");
-        add(EFDMedicalItems.TMK_FIELD_MEDICAL_KIT.item(),"TMK野战医疗包");
-        add(EFDMedicalItems.BATTLEFIELD_MEDICAL_KIT.item(),"战地医疗包");
-        add(EFDMedicalItems.BASIC_FIRST_AID_KIT.item(),"简易医疗盒");
+        add(EFDMedicalItems.STANDARD_FIRST_AID_KIT.get(),"标准军用医疗包");
+        add(EFDMedicalItems.RAPID_MEDICAL_KIT.get(),"926快速急救包");
+        add(EFDMedicalItems.E3_MILITARY_MEDICAL_KIT.get(),"E3军用医疗包");
+        add(EFDMedicalItems.STO_FIRST_AID_KIT.get(),"STO急救套装");
+        add(EFDMedicalItems.TMK_FIELD_MEDICAL_KIT.get(),"TMK野战医疗包");
+        add(EFDMedicalItems.BATTLEFIELD_MEDICAL_KIT.get(),"战地医疗包");
+        add(EFDMedicalItems.BASIC_FIRST_AID_KIT.get(),"简易医疗盒");
     }
 
 }
