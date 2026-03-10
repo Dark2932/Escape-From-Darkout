@@ -33,6 +33,11 @@ public class EFDZhLanguageProvider extends LanguageProvider {
         add(EFDMedicalItems.TMK_FIELD_MEDICAL_KIT.get(),"TMK野战医疗包");
         add(EFDMedicalItems.BATTLEFIELD_MEDICAL_KIT.get(),"战地医疗包");
         add(EFDMedicalItems.BASIC_FIRST_AID_KIT.get(),"简易医疗盒");
+        add(EFDMedicalItems.GRIZZLY_FIRST_AID_KIT.get(),"Grizzly急救包");
+        add(EFDMedicalItems.CAR_FIRST_AID_KIT.get(),"车载急救包");
+        add(EFDMedicalItems.AFAK_FIRST_AID_KIT.get(),"AFAK急救包");
+        add(EFDMedicalItems.IFAK_FIRST_AID_KIT.get(),"IFAK急救包");
+        add(EFDMedicalItems.SALEWA_FIRST_AID_KIT.get(),"Salewa急救包");
     }
 
 }

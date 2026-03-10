@@ -90,4 +90,54 @@ public class EFDMedicalItems {
                     .setUsingTime(2*20)
                     .setThirstConsumption(2)
             );
+    /**
+     * AFAK急救包(afak_first_aid_kit)
+     */
+    public static final RegistryObject<Item> AFAK_FIRST_AID_KIT =
+            MedicalRegister.register("afak_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(1),15
+            )
+                            .setUsingTime(3*20)
+                            .setThirstConsumption(2)
+            );
+    /**
+     * 车载急救包(car_first_aid_kit)
+     */
+    public static final RegistryObject<Item> CAR_FIRST_AID_KIT =
+            MedicalRegister.register("car_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                    .stacksTo(1),20
+            )
+                            .setUsingTime(20*3)
+                            .setThirstConsumption(3)
+            );
+    /**
+     * grizzly急救包(grizzly_first_aid_kit)
+     */
+    public static final RegistryObject<Item> GRIZZLY_FIRST_AID_KIT =
+            MedicalRegister.register("grizzly_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                     .stacksTo(1),16
+            )
+                            .setUsingTime((int)(20*3.5))
+                            .setThirstConsumption(3)
+            );
+    /**
+     * ifak急救包(ifak_first_aid_kit)
+     */
+    public static final RegistryObject<Item> IFAK_FIRST_AID_KIT =
+            MedicalRegister.register("ifak_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                            .stacksTo(1),14
+            )
+                            .setUsingTime((int)(20*3.3))
+                            .setThirstConsumption(3)
+            );
+    /**
+     * salewa急救包(salewa_first_aid_kit)
+     */
+    public static final RegistryObject<Item> SALEWA_FIRST_AID_KIT =
+            MedicalRegister.register("salewa_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+                            .stacksTo(1),20
+            )
+                            .setUsingTime((int)(20*3.1))
+                            .setThirstConsumption(2)
+            );
 }
