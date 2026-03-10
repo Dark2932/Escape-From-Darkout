@@ -103,14 +103,6 @@ public class  EFDMedicalManager extends Item{
                     durabilityConsumption = healthDiff;
                     stack.setDamageValue(stack.getDamageValue() + (int) healthDiff);
                 }
-                ((ServerLevel) player.getCommandSenderWorld()).playSound(
-                        null,
-                        player.getX(), player.getY(), player.getZ(),
-                        usedSound,
-                        SoundSource.PLAYERS,
-                        1.0f,
-                        1.0f
-                );
                 player.playSound(usedSound, 1.0f, 1.0f);
                 player.stopUsingItem();
                 player.getCapability(ModCapabilities.PLAYER_THIRST).ifPresent(cap -> {

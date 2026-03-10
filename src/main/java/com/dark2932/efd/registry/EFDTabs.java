@@ -3,6 +3,7 @@ package com.dark2932.efd.registry;
 import com.dark2932.darklib.register.CreativeTabRegister;
 import com.dark2932.efd.EFD;
 import com.dark2932.efd.registry.item.EFDDrinkAndFoodItems;
+import com.dark2932.efd.registry.item.EFDMedicalItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -16,7 +17,12 @@ public class EFDTabs {
         return CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.efd.tab"))
             .icon(EFDDrinkAndFoodItems.TAURINE_DRINK::stack)
-            .displayItems(TAB_REGISTER.getQuickGenerator())
+            .displayItems((parameters, output) -> {
+                TAB_REGISTER.getQuickGenerator().accept(parameters, output);
+                EFDMedicalItems.MedicalRegister.getEntries().forEach(entry -> {
+                    output.accept(entry.get());
+                });
+            })
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .build();
     });
