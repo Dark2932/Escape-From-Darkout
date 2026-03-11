@@ -2,11 +2,9 @@ package com.dark2932.efd.datagen;
 
 import com.dark2932.efd.EFD;
 import com.dark2932.efd.registry.item.EFDCommonItems;
+import com.dark2932.efd.registry.item.EFDMedicalItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -30,5 +28,6 @@ public class EFDRecipeProvider extends RecipeProvider implements IConditionBuild
         )
                 .unlockedBy("has_iron_ingot",has(Items.IRON_INGOT))
                 .save(consumer, EFD.MODID + "steel_ingot_from_smelting");
+
     }
 }
