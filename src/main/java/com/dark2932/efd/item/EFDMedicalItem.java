@@ -1,10 +1,8 @@
-package com.dark2932.efd.item.manager;
+package com.dark2932.efd.item;
 
 import dev.ghen.thirst.foundation.common.capability.ModCapabilities;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,7 +13,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 
-public class  EFDMedicalManager extends Item{
+public class EFDMedicalItem extends Item{
     /**
      * 此类负责管理医疗物品私有属性和使用逻辑
      */
@@ -26,14 +24,14 @@ public class  EFDMedicalManager extends Item{
     /**
      * 用于设置医疗物品的属性
      **/
-    public EFDMedicalManager(Properties pProperties,int durability) {
+    public EFDMedicalItem(Properties pProperties, int durability) {
         super(pProperties.durability(durability));
     }
     /**
      * 用于设置医疗物品使用后的声音
      * @param sound 使用后声音
      **/
-    public EFDMedicalManager setAfterUseSound(SoundEvent sound){
+    public EFDMedicalItem setAfterUseSound(SoundEvent sound){
         this.usedSound = sound;
         return this;
     }
@@ -41,7 +39,7 @@ public class  EFDMedicalManager extends Item{
      * 用于设置医疗物品使用的时间，默认32tick
      * @param tick 使用时间
      **/
-    public EFDMedicalManager setUsingTime(int tick){
+    public EFDMedicalItem setUsingTime(int tick){
         this.usingTime = tick;
         return this;
     }
@@ -49,7 +47,7 @@ public class  EFDMedicalManager extends Item{
      * 用于设置医疗物品每修补1血量消耗的水量
      * @param thirstConsumption 消耗水量，填正整数（1-20）
      */
-    public EFDMedicalManager setThirstConsumption(int thirstConsumption){
+    public EFDMedicalItem setThirstConsumption(int thirstConsumption){
         this.thirstConsumption = thirstConsumption;
         return this;
     }

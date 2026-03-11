@@ -1,7 +1,7 @@
 package com.dark2932.efd.registry.item;
 
 import com.dark2932.efd.EFD;
-import com.dark2932.efd.item.manager.EFDMedicalManager;
+import com.dark2932.efd.item.EFDMedicalItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,7 +22,7 @@ public class EFDMedicalItems {
      * 标准军用医疗包 standard_first_aid_kit
      */
     public static final RegistryObject<Item> STANDARD_FIRST_AID_KIT =
-            MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),10
             )
                     .setUsingTime((int)(20*2.1))
@@ -33,7 +33,7 @@ public class EFDMedicalItems {
      * 926快速医疗包 Rapid Medical Kit
      */
     public static final RegistryObject<Item> RAPID_MEDICAL_KIT =
-            MedicalRegister.register("rapid_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("rapid_medical_kit", () -> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),12
             )
                     .setUsingTime((int)(20*3.2))
@@ -44,7 +44,7 @@ public class EFDMedicalItems {
      * E3军用医疗包Military medical kit
      */
     public static final RegistryObject<Item> E3_MILITARY_MEDICAL_KIT =
-            MedicalRegister.register("e3_military_medical_kit", () -> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("e3_military_medical_kit", () -> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),20
             )
                             .setUsingTime((int)(20*4.1))
@@ -54,7 +54,7 @@ public class EFDMedicalItems {
      * TMK野战医疗包tmk_field_medical_kit
      */
     public static final RegistryObject<Item> TMK_FIELD_MEDICAL_KIT =
-            MedicalRegister.register("tmk_field_medical_kit",() -> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("tmk_field_medical_kit",() -> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),38
             )
                             .setUsingTime((int)(20*4.1))
@@ -64,7 +64,7 @@ public class EFDMedicalItems {
      * STO急救套装sto_first_aid_kit
      */
     public static final RegistryObject<Item> STO_FIRST_AID_KIT =
-            MedicalRegister.register("sto_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("sto_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),70
             )
                     .setThirstConsumption(2)
@@ -74,7 +74,7 @@ public class EFDMedicalItems {
      * 战地医疗包 (battlefield_medical_kit)
      */
     public static final RegistryObject<Item> BATTLEFIELD_MEDICAL_KIT =
-            MedicalRegister.register("battlefield_medical_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("battlefield_medical_kit",()-> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),30
             )
                     .setUsingTime((int)(20*4.1))
@@ -84,7 +84,7 @@ public class EFDMedicalItems {
      * 简易医疗盒 (basic_first_aid_kit)
      */
     public static final RegistryObject<Item> BASIC_FIRST_AID_KIT =
-            MedicalRegister.register("basic_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("basic_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),8
             )
                     .setUsingTime(2*20)
@@ -94,7 +94,7 @@ public class EFDMedicalItems {
      * AFAK急救包(afak_first_aid_kit)
      */
     public static final RegistryObject<Item> AFAK_FIRST_AID_KIT =
-            MedicalRegister.register("afak_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("afak_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),15
             )
                             .setUsingTime(3*20)
@@ -104,7 +104,7 @@ public class EFDMedicalItems {
      * 车载急救包(car_first_aid_kit)
      */
     public static final RegistryObject<Item> CAR_FIRST_AID_KIT =
-            MedicalRegister.register("car_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("car_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),20
             )
                             .setUsingTime(20*3)
@@ -114,7 +114,7 @@ public class EFDMedicalItems {
      * grizzly急救包(grizzly_first_aid_kit)
      */
     public static final RegistryObject<Item> GRIZZLY_FIRST_AID_KIT =
-            MedicalRegister.register("grizzly_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("grizzly_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                      .stacksTo(1),16
             )
                             .setUsingTime((int)(20*3.5))
@@ -124,7 +124,7 @@ public class EFDMedicalItems {
      * ifak急救包(ifak_first_aid_kit)
      */
     public static final RegistryObject<Item> IFAK_FIRST_AID_KIT =
-            MedicalRegister.register("ifak_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("ifak_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                             .stacksTo(1),14
             )
                             .setUsingTime((int)(20*3.3))
@@ -134,7 +134,7 @@ public class EFDMedicalItems {
      * salewa急救包(salewa_first_aid_kit)
      */
     public static final RegistryObject<Item> SALEWA_FIRST_AID_KIT =
-            MedicalRegister.register("salewa_first_aid_kit",()-> new EFDMedicalManager(new Item.Properties()
+            MedicalRegister.register("salewa_first_aid_kit",()-> new EFDMedicalItem(new Item.Properties()
                             .stacksTo(1),20
             )
                             .setUsingTime((int)(20*3.1))
