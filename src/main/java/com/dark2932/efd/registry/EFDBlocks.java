@@ -2,11 +2,9 @@ package com.dark2932.efd.registry;
 
 import com.dark2932.efd.EFD;
 import com.dark2932.efd.gui.blocks.MedicalCraftingTableBlock;
-import com.dark2932.efd.gui.entity.MedicalCraftingTableEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

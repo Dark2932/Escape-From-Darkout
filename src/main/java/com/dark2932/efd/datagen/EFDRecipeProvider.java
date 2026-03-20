@@ -22,11 +22,11 @@ public class EFDRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.smelting(
                 Ingredient.of(Items.IRON_INGOT),//输入物品
                 RecipeCategory.BUILDING_BLOCKS,//配方类型
-                EFDCommonItems.STEEL_INGOT.item(),//输出物品
+                EFDCommonItems.STEEL_INGOT.get(),//输出物品
                 0.7f,//获取经验值
                 20*7//熔炼时间
         )
-                .unlockedBy("has_iron_ingot",has(Items.IRON_INGOT))
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(consumer, EFD.MODID + "steel_ingot_from_smelting");
 
     }

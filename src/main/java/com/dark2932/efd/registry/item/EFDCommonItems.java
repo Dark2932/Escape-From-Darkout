@@ -1,22 +1,29 @@
 package com.dark2932.efd.registry.item;
 
-import com.dark2932.darklib.register.item.ItemRegister;
-import com.dark2932.darklib.util.ItemEntry;
 import com.dark2932.efd.EFD;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class EFDCommonItems {
 
-    public static final ItemRegister ITEM_REGISTER = ItemRegister.of(EFD.MODID);
+    public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, EFD.MODID);
 
-    public static void init(IEventBus bus) {
-        ITEM_REGISTER.init(bus);
+    public static final RegistryObject<Item> STEEL_INGOT = newCommonItem("steel_ingot");
+    public static final RegistryObject<Item> HIGH_TOUGHNESS_STEEL = newCommonItem("high_toughness_steel");
+    public static final RegistryObject<Item> TOOL_HAMMER = newCommonItem("tool_hammer");
+    public static final RegistryObject<Item> THIN_STEEL_SHEET = newCommonItem("thin_steel_sheet");
+    public static final RegistryObject<Item> STEEL_BOTTLE = newCommonItem("steel_bottle");
+
+    /** 构建物品的私有方法 **/
+    private static RegistryObject<Item> newCommonItem(String name) {
+        return REGISTER.register(name, () -> new Item(new Item.Properties()));
     }
 
-    public static final ItemEntry STEEL_INGOT = ITEM_REGISTER.newItem("steel_ingot");
-    public static final ItemEntry HIGH_TOUGHNESS_STEEL = ITEM_REGISTER.newItem("high_toughness_steel");
-    public static final ItemEntry TOOL_HAMMER = ITEM_REGISTER.newItem("tool_hammer");
-    public static final ItemEntry THIN_STEEL_SHEET = ITEM_REGISTER.newItem("thin_steel_sheet");
-    public static final ItemEntry STEEL_BOTTLE = ITEM_REGISTER.newItem("steel_bottle");
+    public static void init(IEventBus bus) {
+        REGISTER.register(bus);
+    }
 
 }

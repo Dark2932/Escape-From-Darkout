@@ -16,15 +16,15 @@ public class EFDZhLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         add("itemGroup.efd.tab", "Escape From Darkout");
 
-        add(EFDCommonItems.STEEL_INGOT.item(),"钢锭");
-        add(EFDCommonItems.STEEL_BOTTLE.item(),"钢瓶");
-        add(EFDCommonItems.HIGH_TOUGHNESS_STEEL.item(),"高韧钢");
-        add(EFDCommonItems.THIN_STEEL_SHEET.item(),"薄钢板");
-        add(EFDCommonItems.TOOL_HAMMER.item(),"锤子");
+        add(EFDCommonItems.STEEL_INGOT.get(),"钢锭");
+        add(EFDCommonItems.STEEL_BOTTLE.get(),"钢瓶");
+        add(EFDCommonItems.HIGH_TOUGHNESS_STEEL.get(),"高韧钢");
+        add(EFDCommonItems.THIN_STEEL_SHEET.get(),"薄钢板");
+        add(EFDCommonItems.TOOL_HAMMER.get(),"锤子");
 
-        add(EFDDrinkAndFoodItems.TAURINE_CRYSTAL.item(),"牛磺酸结晶");
-        add(EFDDrinkAndFoodItems.TAURINE_DRINK.item(),"牛磺酸饮料");
-        add(EFDDrinkAndFoodItems.COMPRESSED_BISCUITS.item(),"压缩饼干");
+        add(EFDDrinkAndFoodItems.TAURINE_CRYSTAL.get(),"牛磺酸结晶");
+        add(EFDDrinkAndFoodItems.TAURINE_DRINK.get(),"牛磺酸饮料");
+        add(EFDDrinkAndFoodItems.COMPRESSED_BISCUITS.get(),"压缩饼干");
 
         add(EFDMedicalItems.STANDARD_FIRST_AID_KIT.get(),"标准军用医疗包");
         add(EFDMedicalItems.RAPID_MEDICAL_KIT.get(),"926快速急救包");

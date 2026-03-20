@@ -34,7 +34,7 @@ public class EFD {
         EFDMedicalItems.init(bus);
         EFDDrinkAndFoodItems.init(bus);
 
-        EFDTabs.TAB_REGISTER.init(bus);
+        EFDTabs.init(bus);
 
     }
 

@@ -22,7 +22,7 @@ public class EFDMedicalItems {
      * 标准军用医疗包 standard_first_aid_kit
      */
     public static final RegistryObject<Item> STANDARD_FIRST_AID_KIT =
-            MedicalRegister.register("standard_first_aid_kit",() -> new EFDMedicalItem(new Item.Properties()
+            MedicalRegister.register("standard_first_aid_kit", () -> new EFDMedicalItem(new Item.Properties()
                     .stacksTo(1),10
             )
                     .setUsingTime((int)(20*2.1))
